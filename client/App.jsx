@@ -1,5 +1,5 @@
 import React, { useState, useEffect, createContext } from 'react';
-import { BrowserRouter, Routes, Route} from "react-router-dom";
+import { BrowserRouter, Routes, Route, HashRouter} from "react-router-dom";
 import axios from 'axios';
 import './css/styles.css'
 import Navbar from "./components/Navbar.jsx"
@@ -63,7 +63,7 @@ const App = () => {
   if(loggedIn){
     return ( 
       <div className = "App">
-          <BrowserRouter>
+          <HashRouter>
             <Navbar />
             <Routes>
                 <Route path = "/" element = {<Home/>}/>
@@ -71,7 +71,7 @@ const App = () => {
                 <Route path = "/findEvents" element = {<EventsContainer/>}/>
                 <Route path = "/hostEvents" element = {<EventMaker userCurrentEvents={userCurrentEvents} setUserCurrentEvents={setUserCurrentEvents} userID={userID}/>}/>
             </Routes>
-          </BrowserRouter>
+          </HashRouter>
       </div> )
   } // If not logged in render the LoginSignup component
   else {

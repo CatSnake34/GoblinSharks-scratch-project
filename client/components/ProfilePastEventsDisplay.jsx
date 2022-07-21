@@ -6,16 +6,18 @@ const ProfilePastEventsDisplay = props => {
     // TO DO: RENDER PAST EVENTS FROM PASSED DOWN PROPS
     const {userPastEvents} = props;
 
-    if (!userPastEvents.length) return (
-        <div>Sorry, no events planned yet!</div>
-    );
+    // if (!userPastEvents.length) return (
+    //     <div>Sorry, no events planned yet!</div>
+    // );
 
     // const pastEvents = eventsData.filter(
     //     (event) => event.date < Date.now()
     // )
 
     return (
+
         <div className = "EventsDisplay">
+            <h1>Past Events</h1>
             {
                 userPastEvents.map((event) => (
                     <Event event = {event}/>

@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 app.use('/event', eventRouter);
-app.use('/', userRouter);
+app.use('/user', userRouter);
 
 
 // app.use(function(req, res, next) {
@@ -23,6 +23,9 @@ app.use('/', userRouter);
 //   next();
 // });
 
+app.get('/', (req, res) => {
+  return res.status(200).sendFile(path.resolve(__dirname, '../index.html'));
+});
 
 app.use((req, res) => {
     // res.sendStatus(404);

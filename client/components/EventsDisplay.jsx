@@ -4,9 +4,9 @@ import Event from './Event'
 const EventsDisplay = (props) => {
     const {eventsData} = props;
 
-    if (!eventsData.length) return (
-        <div>Sorry, no events planned yet!</div>
-    );
+    // if (!eventsData.length) return (
+    //     <div>Sorry, no events planned yet!</div>
+    // );
 
     return (
         <div className = "EventsDisplay">

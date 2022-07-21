@@ -7,13 +7,17 @@ module.exports = {
     entry: "./client/index.js",
     output: {
         filename: "bundle.js",
+        publicPath: '/',
         path: path.resolve(__dirname, 'build')
     },
     resolve: {
         extensions: ['.js', '.jsx'],
     },
     devServer: {
+      historyApiFallback: true,
+      hot: true,
       static: {
+          publicPath: '/',
           directory: path.join(__dirname, 'build'),
       },
       proxy: {

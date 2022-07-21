@@ -6,12 +6,13 @@ const ProfileCurrentEventsDisplay = props => {
 
     const {userCurrentEvents} = props;
 
-    if (!userCurrentEvents.length) return (
-        <div>Sorry, no events planned yet!</div>
-    );
+    // if (!userCurrentEvents.length) return (
+    //     <div>Sorry, no events planned yet!</div>
+    // );
 
     return (
         <div className = "EventsDisplay">
+            <h1>Current Events</h1>
             {
                 userCurrentEvents.map((event) => (
                     <Event event = {event}/>

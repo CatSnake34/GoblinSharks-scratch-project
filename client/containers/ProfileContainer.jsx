@@ -7,13 +7,13 @@ import ProfileCurrentEventsDisplay from '../components/ProfileCurrentEventsDispl
 import ProfilePastEventsDisplay from '../components/ProfilePastEventsDisplay'
 
 const ProfileContainer = props => {
-  const { userCurrentEvents, userPastEvents, eventsData } = props;
+  const { userCurrentEvents, userPastEvents} = props;
   //TO DO: PARSE USEREVENTS INTO CURRENTEVENTS AND PASTEVENTS. THEN PAST THEM DOWN TO THE APPROPRIATE PRESENTATIONAL COMPONENT
 
   return (
     <div className = "ProfileContainer">
         <ProfilePictureDisplay/>
-        <ProfileStatsDisplay userCurrentEvents={userCurrentEvents} userPastEvents={userPastEvents} eventsData= {eventsData}/>
+        <ProfileStatsDisplay userCurrentEvents={userCurrentEvents} userPastEvents={userPastEvents}/>
         <ProfileCurrentEventsDisplay userCurrentEvents={userCurrentEvents}/>
         <ProfilePastEventsDisplay userPastEvents={userPastEvents}/>
     </div>

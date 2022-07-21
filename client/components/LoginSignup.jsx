@@ -13,7 +13,7 @@ const LoginSignup = props => {
   
   const loginBtn = async () => {
     try {
-      const status = await axios.post('/login', 
+      const status = await axios.post('/user/login', 
         {email: email, password: password },
         {
           headers: {
@@ -23,6 +23,11 @@ const LoginSignup = props => {
         }, 
       );
       // After successful login:
+      // console.log(status)
+      // localStorage.setItem(
+      //   'user', 
+      //   JSON.stringify(...status.data));
+
       props.setUserID(document.cookie.slice(document.cookie.indexOf('=') + 1));
       if (status) props.setLoggedIn(true); // route to homepage
       else console.log('Error logging in');
@@ -35,7 +40,7 @@ const LoginSignup = props => {
   const signUpBtn = async () => {
     try {
       if (!/[a-z0-9]+@[a-z]+\.[a-z]{2,3}/.test(email)) console.log('did not pass regex');
-      const status = await axios.post('/signup',
+      const status = await axios.post('/user/signup',
       {fullname: fullName, email: email, password: password },
       {
         headers: {
@@ -54,7 +59,6 @@ const LoginSignup = props => {
     }
     // After successful sign up:
   };
-    
 
   return (
     <div className = "LoginSignup">

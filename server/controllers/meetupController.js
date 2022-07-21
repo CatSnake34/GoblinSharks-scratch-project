@@ -6,7 +6,7 @@ const meetUpController ={};
 meetUpController.getCurrentEvents = async (req, res, next) => {
   try {
     const user_id = req.body.user_id;
-    const sqlQuery = `SELECT * FROM Events WHERE date >= CURRENT_DATE AND user_id=${user_id}`;
+    const sqlQuery = `SELECT Users._id, Events.date, Events.starttime, Events.endtime, Events.title, Events.description, Users.fullname FROM Events LEFT JOIN users ON Events.user_id=Users._id WHERE date >= CURRENT_DATE AND user_id=${user_id}`;
     const currentEvents = await db.query(sqlQuery);
     res.locals.currentEvents = currentEvents.rows;
     return next();
@@ -20,7 +20,7 @@ meetUpController.getCurrentEvents = async (req, res, next) => {
 meetUpController.getPastEvents = async (req, res, next) => {
   try {
     const user_id = req.body.user_id; // or whatever the key will be
-    const sqlQuery = `SELECT * FROM Events WHERE date < CURRENT_DATE AND user_id=${user_id}`; 
+    const sqlQuery = `SELECT Users._id, Events.date, Events.starttime, Events.endtime, Events.title, Events.description, Users.fullname FROM Events LEFT JOIN users ON Events.user_id=Users._id WHERE date < CURRENT_DATE AND user_id=${user_id}`; 
     const pastEvents = await db.query(sqlQuery);
     res.locals.pastEvents = pastEvents.rows; 
     return next(); 
