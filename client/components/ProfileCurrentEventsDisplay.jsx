@@ -1,5 +1,6 @@
 import React from 'react';
 import Event from './Event'
+import '../css/styles.css';
 
 const ProfileCurrentEventsDisplay = props => {
     // TO DO: RENDER CURRENT EVENTS FROM PASSED DOWN PROPS

@@ -1,6 +1,7 @@
 import { datePickerDefaultProps } from '@material-ui/pickers/constants/prop-types';
 import React from 'react';
 import Event from './Event'
+import '../css/styles.css';
 
 const ProfilePastEventsDisplay = props => {
     // TO DO: RENDER PAST EVENTS FROM PASSED DOWN PROPS

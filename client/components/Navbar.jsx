@@ -5,7 +5,7 @@ import '../css/navbar.css';
 const Navbar = () => {
 
   const logOut = () => {
-    document.cookie = "SSID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    document.cookie = "SSID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"
     //const navigate = useNavigate();
     //navigate('/');
     window.location.href = 'http://localhost:8080';

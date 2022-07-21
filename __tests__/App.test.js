@@ -8,3 +8,4 @@ describe("App Component", function () {
       expect (getByText())
 
     })
+  });

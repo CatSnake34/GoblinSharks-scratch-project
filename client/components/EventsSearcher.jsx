@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import '../css/inputs.css';
 import axios from 'axios';
+import { message } from "antd";
 
 const EventsSearcher = props => {
     const { setEventsData } = props;
@@ -17,6 +18,7 @@ const EventsSearcher = props => {
               startDate: startDate,
               time: time
         });
+        if (!response.data.length) message.error('Sorry, no events found!')
         setEventsData(response.data);
       } catch (error) {
           console.log('error in searching for events function')

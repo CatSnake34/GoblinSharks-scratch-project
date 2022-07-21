@@ -1,6 +1,7 @@
 import React, { useState, useEffect, createContext } from 'react';
 import { BrowserRouter, Routes, Route, HashRouter} from "react-router-dom";
 import axios from 'axios';
+import "antd/dist/antd.css";
 import './css/styles.css'
 import Navbar from "./components/Navbar.jsx"
 import Home from './components/Home.jsx';

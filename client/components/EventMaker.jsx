@@ -4,6 +4,7 @@ import DatePicker from 'react-datepicker';
 // import required react-datepicker styling file
 import "react-datepicker/dist/react-datepicker.css";
 import '../css/inputs.css';
+import { message } from "antd";
 
 const EventMaker = props => {
   const [activity, setActivity] = useState('No activity listed.'); // take a default value: maybe 'new activity'? 
@@ -24,6 +25,7 @@ const EventMaker = props => {
         description: description,
         id: userID
       });
+      message.success("Event created successfully")
       setUserCurrentEvents([...userCurrentEvents, response]);
       console.log(response);
   } catch (error) {
