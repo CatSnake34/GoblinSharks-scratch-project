@@ -42,9 +42,11 @@ app.use((err, req, res, next) => {
     return res.status(errorObj.status).json(errorObj.message);
 });
 
-
+/*
 app.listen(PORT, () => {
     console.log(`Server Listening on port ${PORT}...`);
-})
+})*/
 
-module.exports = app;
+module.exports =  app.listen(PORT, () => {
+    console.log(`Server Listening on port ${PORT}...`);
+});

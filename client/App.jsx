@@ -30,25 +30,25 @@ const App = () => {
   // const [userEvents, setUserEvents] = useState([]);
 
 
-  const getCurrentEvents = async () => {
-    try {
-      const { data } = await axios.post('/event/currentEvents', {user_id: userID});
-      setUserCurrentEvents(data);
-      console.log('currentevents:', data)
-    } catch(err) {
-      console.log('Sorry there was an error retrieving your current events.');
-    }
-  } 
+  // const getCurrentEvents = async () => {
+  //   try {
+  //     const { data } = await axios.post('/event/currentEvents', {user_id: userID});
+  //     setUserCurrentEvents(data);
+  //     console.log('currentevents:', data)
+  //   } catch(err) {
+  //     console.log('Sorry there was an error retrieving your current events.');
+  //   }
+  // } 
 
-  const getPastEvents = async () => {
-    try {
-      const { data } = await axios.post('/event/pastEvents',  {user_id : userID});
-      setUserPastEvents(data);
-      console.log('pastevents: ', data);
-    } catch(err) {
-      console.log('Sorry there was an error retrieving your past events.');
-    }
-  } 
+  // const getPastEvents = async () => {
+  //   try {
+  //     const { data } = await axios.post('/event/pastEvents',  {user_id : userID});
+  //     setUserPastEvents(data);
+  //     console.log('pastevents: ', data);
+  //   } catch(err) {
+  //     console.log('Sorry there was an error retrieving your past events.');
+  //   }
+  // } 
 
   // useEffect(() => {
   //   if(loggedIn) {  

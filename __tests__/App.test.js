@@ -1,11 +1,18 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import { App } from "../client/App";
+import App from "../client/App";
 
-describe("App Component", function () {
-    it ("it should not have nav bar if the user hasn't signed in", function () {
-      let { getByText } = render(<App />);
-      expect (getByText())
 
-    })
-  });
+
+jest.mock('../client/components/NavBar', () => () => <div data-testid="NavBar-app" />);
+jest.mock('../client/components/LoginSignup', () => () => <div data-testid="LoginSignup" />);
+
+test('should render nav bar since user is logged in', () => {
+    const { getByTestId } = render(<App loggedIn />)
+    expect(getByTestId(/NavBar-app/)).toBeInTheDocument()
+})
+
+test('should render the sign up log in page', () => {
+    const { getByTestId } = render(<App loggedIn={false} />);
+    expect(getByTestId(/LoginSignup/)).toBeInTheDocument(); 
+})
